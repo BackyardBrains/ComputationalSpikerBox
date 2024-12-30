@@ -7,8 +7,10 @@ Team: Etienne, Chethan, Hatch, Max, with Greg
 
 Advice from: Stan
 
-## Main Files in Directory:
-GGDemoX
+## Main Files and Descriptions:
+GGDemoX: Demo Worthy Code, latest and greatest with all the bells and whistles
+MLReadin: Use for reading in sensor data to Edge Impulse
+ETBiophysical: Potential future, converted python colab biophysical model
 
 ## Links:
 
