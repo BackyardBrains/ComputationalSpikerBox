@@ -1,25 +1,103 @@
-### Computational Spiker Box
-The Computational Spiker Box ( hereafter called CSBox ) is a hardware lab meant to explore better the interactions between the senses and the central nervous system. This device was developed by Backyard Brains engineers, and the focus is on a student’s neuroscience education. The CSBox works by taking established neuron mathematical models and allowing the user to interact with them via hardware ( in our case, potentiometers or "knobs" and sensors).
-	The immediate thought is for a teacher to get the CSBox, run through the testing stage on their device, and then get their students involved by making their models and testing each model on their main computer.
-Should the teacher want to, this could also be run where they buy a CSBox for each student, opening up possibilities to explore more of the computational neuroscience side as students can pull apart the models for Morris Lecar and Isheveich, and potentially even dive into some of the machine learning/sensors if the class is more of a STEM fusion. It depends on the environment and the target audience ( each student owning a CSBox might be more of a private school thing depending on price ).
+# Computational Spiker Box (CSBox)
 
-Team: Etienne, Chethan, Hatch, Max, with Greg   
+The **Computational Spiker Box** (CSBox) is a hardware-based lab platform designed to introduce students to **computational neuroscience**. Developed by Backyard Brains engineers, the CSBox enables users to explore how **neuron mathematical models** interact with **hardware controls**—like potentiometers (“knobs”) and various sensors—thereby bridging neuroscience theory with hands-on experience.
 
-Advice from: Stan
+## Overview
 
-## Main Files and Descriptions:
-GGDemoX: Demo Worthy Code, latest and greatest with all the bells and whistles
-MLReadin: Use for reading in sensor data to Edge Impulse
-ETBiophysical: Potential future, converted python colab biophysical model
+- **What It Does**  
+  1. **Morris–Lecar Model**: A spiking neuron model where students can twist knobs (ion channel conductances) to see how different ionic currents affect membrane voltage.  
+  2. **Izhikevich + TinyML Model**: A “Neuron Identification Game” that integrates **machine learning** to classify sensor data and drive a simplified neuron model in real time.
 
-## Links:
+- **Who It’s For**  
+  - **Teachers** can run a single CSBox in front of the class, or  
+  - **Each student** can have their own CSBox (if resources allow) to dive deeper into computational models, sensor readings, and even machine learning.
 
-[CSBox Highschooler Lesson Plan](https://docs.google.com/document/d/10m3qYU1o_Ff_S5vf5cXgXZOqF4JOqBALDKtLj9YVtUo/edit?tab=t.0#heading=h.nyvcnz9wxjju)
+- **Educational Goals**  
+  - Demonstrate how theoretical neuron equations (Morris–Lecar, Izhikevich) can be **interactively** explored.  
+  - Provide a **hands-on** introduction to **machine learning** classification, bridging neuroscience, electronics, and STEM.
 
-[Empanada Machine Learning Model](https://studio.edgeimpulse.com/public/571525/live/impulse/1/learning/keras/7)
+---
 
-[Edge Impulse Model Edge Impulse Intro from Grove Article](https://wiki.seeedstudio.com/Wio-Terminal-TinyML-EI-1/)
+## Repository Contents
 
-[Edge Impulse Intro from Grove Video](https://youtu.be/iCmlKyAp8eQ)
+- **`CSBv1.ino`**  
+  *This is the latest, feature-complete release.* It implements the two main modes (Morris–Lecar for biophysical spiking, and Izhikevich + TinyML for the “Neuron Identification Game”) as described above.
 
-[Arduino Library Installation After Model has been created ](https://docs.edgeimpulse.com/docs/run-inference/arduino-library)
+- **`GGDemoX`**  
+  A previous demo-oriented codebase with “bells and whistles” used to showcase earlier features and prototypes.
+
+- **`MLReadin`**  
+  A specialized sketch for reading sensor data into Edge Impulse (TinyML) for model training.
+
+- **`ETBiophysical`**  
+  An experimental or future direction, converting a Python Colab-style biophysical model into Arduino code.
+
+---
+
+## Team & Acknowledgments
+
+**Team**: Etienne, Chethan, Hatch, Max, with Greg  
+**Advice from**: Stan  
+
+> The Izhikevich model portion is adapted from the original paper (2003 IEEE) and informed by [Spikeling v1.1 by T. Baden (Sussex Neuroscience)](www.badenlab.org).
+
+---
+
+## Helpful Links
+
+1. **CSBox High School Lesson Plan**  
+   [Google Doc](https://docs.google.com/document/d/10m3qYU1o_Ff_S5vf5cXgXZOqF4JOqBALDKtLj9YVtUo/edit?tab=t.0#heading=h.nyvcnz9wxjju)
+
+2. **Empanada Machine Learning Model**  
+   [Edge Impulse Public Project](https://studio.edgeimpulse.com/public/571525/live/impulse/1/learning/keras/7)
+
+3. **Edge Impulse Intro from Grove Article**  
+   [Seeed Wiki Page](https://wiki.seeedstudio.com/Wio-Terminal-TinyML-EI-1/)
+
+4. **Edge Impulse Intro from Grove Video**  
+   [YouTube Link](https://youtu.be/iCmlKyAp8eQ)
+
+5. **Arduino Library Installation After Model Creation**  
+   [Edge Impulse Docs](https://docs.edgeimpulse.com/docs/run-inference/arduino-library)
+
+---
+
+## Usage & Getting Started
+
+1. **Hardware Setup**  
+   - Connect your CSBox main board with potentiometers (for Morris–Lecar) and any add-on boards (like “SKIN”) for the ML-based neuron ID game.
+   - Make sure you have a compatible microcontroller (e.g., Arduino-type board) and all required sensors (FSR, Temp, Light).
+
+2. **Software & Libraries**  
+   - Install the **Arduino IDE** (or PlatformIO).  
+   - Ensure you have the **Adafruit NeoPixel** library and any relevant libraries from **Edge Impulse** installed.
+
+3. **Flashing `CSBv1.ino`**  
+   - Open `CSBv1.ino` in the Arduino IDE.  
+   - Select your board and COM port.  
+   - Upload the sketch.
+
+4. **Running & Observing**  
+   - **Mode 1 (Morris–Lecar)**: If no add-on board is detected (attachment sense pin < threshold), you’ll see the spiking behavior controlled by three knobs.  
+   - **Mode 2 (Izhikevich + TinyML)**: If the SKIN add-on board is attached (attachment sense pin >= threshold), the sketch runs a classification on sensor data to decide whether to “fire” the neuron model.  
+   - Monitor the **Serial** output to see debug info or classification confidence.
+
+5. **Lesson Integration**  
+   - Check the [High School Lesson Plan](https://docs.google.com/document/d/10m3qYU1o_Ff_S5vf5cXgXZOqF4JOqBALDKtLj9YVtUo/edit?tab=t.0#heading=h.nyvcnz9wxjju) for ideas on how to structure classroom labs around these models and sensors.  
+   - Encourage students to experiment with sensor inputs, observe changes in spiking behaviors, and track their hypotheses versus actual model outcomes.
+
+---
+
+## Future Directions
+
+- **Additional Models**: You can import new or extended neuron models (e.g., Hodgkin–Huxley, heart pacemaker cells).  
+- **Deeper ML**: Train your own classifiers with new sensor data (using [Edge Impulse](https://studio.edgeimpulse.com/)).  
+- **Advanced Lab Activities**: Introduce noise, bursting phenomena, or combined synaptic inputs for more complex lessons.
+
+---
+
+**License**:  
+[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) – This project is free for educational and non-commercial use.
+
+
+*Happy Spiking!*
