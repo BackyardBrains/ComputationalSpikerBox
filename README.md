@@ -1,12 +1,12 @@
-# Computational Spiker Box (CSBox)
+# Computational SpikerBox (CSB)
 
-The **Computational Spiker Box** (CSBox) is a hardware-based lab platform designed to introduce students to **computational neuroscience**. Developed by Backyard Brains engineers, the CSBox enables users to explore how **neuron mathematical models** interact with **hardware controls**—like potentiometers (“knobs”) and various sensors—thereby bridging neuroscience theory with hands-on experience.
+The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed to introduce students to **computational neuroscience**. Developed by the engineers at Backyard Brains, the CSB enables students to explore how ion channels of neurons funciton using **mathematical models**.  Studentsi nteract with **physical knobs**” to open, shut, ot operate Na++, K++ amd other Ion Channels.  Optional Addon boards allow studenrts to engage in virtual electrophysiology, determining which neruon-type the electrode is picking up by interactng with various sensors (touch, vibraion, light, heat, etc) — bridging neuroscience theory with hands-on experience.
 
 ## Overview
 
 - **What It Does**  
-  1. **Morris–Lecar Model**: A spiking neuron model where students can twist knobs (ion channel conductances) to see how different ionic currents affect membrane voltage.  
-  2. **Izhikevich + TinyML Model**: A “Neuron Identification Game” that integrates **machine learning** to classify sensor data and drive a simplified neuron model in real time.
+  1. **Morris–Lecar Model**: A spiking neuron model where students can twist knobs (ion channel conductances) to see how poisons and venums can affect the nervous system.  
+  2. **Izhikevich + TinyML Model**: An “EPhys Neuron Identification Game” that integrates **machine learning** to classify sensor data and drive a simplified neuron model in real time.
 
 - **Who It’s For**  
   - **Teachers** can run a single CSBox in front of the class, or  
