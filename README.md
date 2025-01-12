@@ -1,12 +1,12 @@
 # Computational SpikerBox (CSB)
 
-The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed to introduce students to **computational neuroscience**. Developed by the engineers at Backyard Brains, the CSB enables students to explore how ion channels of neurons funciton using **mathematical models**.  Studentsi nteract with **physical knobs**” to open, shut, ot operate Na++, K++ amd other Ion Channels.  Optional Addon boards allow studenrts to engage in virtual electrophysiology, determining which neruon-type the electrode is picking up by interactng with various sensors (touch, vibraion, light, heat, etc) — bridging neuroscience theory with hands-on experience.
+The **Computational SpikerBox** (CSB) is a hardware-based lab platform that introduces students to **computational neuroscience**. Developed by the engineers at Backyard Brains, the CSB enables students to explore how ion channels of neurons function using **mathematical models**.  Students interact with **physical knobs**” to open, shut, or operate Na++, K++, and other Ion Channels.  Optional Addon boards allow students to engage in virtual electrophysiology, determining which neuron type the electrode picks up by interacting with various sensors (touch, vibration, light, heat, etc) — bridging neuroscience theory with hands-on experience.
 
 ## Overview
 
 - **What It Does**  
   1. **Hodgkin-Huxley-Serbe Model**: A spiking neuron model where students can twist knobs (ion channel conductances) to see how poisons and venums can affect the nervous system.  
-  2. **Izhikevich + TinyML Model**: An “EPhys Neuron Identification Game” that integrates **machine learning** to classify sensor data and drive a simplified neuron model in real time.
+  2. **Izhikevich + TinyML Model**: An “EPhys Neuron Identification Game” that integrates **machine learning** to classify sensor data and drive a simplified neuron model in real-time.
 
 - **Who It’s For**  
   - **Teachers** can run a single CSBox in front of the class, or  
@@ -25,9 +25,6 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed 
   
 - **`ei-empanada-arduino-1.0.X.zip`**  
   *This is the latest Machine Learning header.* Needed for Izhikevich model and Neuron guessing game
-  
-- **`GGDemoX`**  
-  A previous demo-oriented codebase with “bells and whistles” used to showcase earlier features and prototypes.
 
 - **`MLReadin`**  
   A specialized sketch for reading sensor data into Edge Impulse (TinyML) for model training.
