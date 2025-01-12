@@ -5,7 +5,7 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed 
 ## Overview
 
 - **What It Does**  
-  1. **Morris–Lecar Model**: A spiking neuron model where students can twist knobs (ion channel conductances) to see how poisons and venums can affect the nervous system.  
+  1. **Hodgkin-Huxley Model**: A spiking neuron model where students can twist knobs (ion channel conductances) to see how poisons and venums can affect the nervous system.  
   2. **Izhikevich + TinyML Model**: An “EPhys Neuron Identification Game” that integrates **machine learning** to classify sensor data and drive a simplified neuron model in real time.
 
 - **Who It’s For**  
@@ -13,16 +13,19 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed 
   - **Each student** can have their own CSBox (if resources allow) to dive deeper into computational models, sensor readings, and even machine learning.
 
 - **Educational Goals**  
-  - Demonstrate how theoretical neuron equations (Morris–Lecar, Izhikevich) can be **interactively** explored.  
+  - Demonstrate how theoretical neuron equations (Hodgkin-Huxley, Izhikevich) can be **interactively** explored.  
   - Provide a **hands-on** introduction to **machine learning** classification, bridging neuroscience, electronics, and STEM.
 
 ---
 
 ## Repository Contents
 
-- **`CSBv1.ino`**  
-  *This is the latest, feature-complete release.* It implements the two main modes (Morris–Lecar for biophysical spiking, and Izhikevich + TinyML for the “Neuron Identification Game”) as described above.
-
+- **`CSBv1.1.ino`**  
+  *This is the latest, feature-complete release.* It implements the two main modes (Hodgkin-Huxley for biophysical spiking, and Izhikevich + TinyML for the “Neuron Identification Game”) as described above.
+  
+- **`ei-empanada-arduino-1.0.X.zip`**  
+  *This is the latest Machine Learning header.* Needed for Izhikevich model and Neuron guessing game
+  
 - **`GGDemoX`**  
   A previous demo-oriented codebase with “bells and whistles” used to showcase earlier features and prototypes.
 
@@ -65,7 +68,7 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed 
 ## Usage & Getting Started
 
 1. **Hardware Setup**  
-   - Connect your CSBox main board with potentiometers (for Morris–Lecar) and any add-on boards (like “SKIN”) for the ML-based neuron ID game.
+   - Connect your CSBox main board with potentiometers (for Hodgkin-Huxley) and any add-on boards (like “SKIN”) for the ML-based neuron ID game.
    - Make sure you have a compatible microcontroller (e.g., Arduino-type board) and all required sensors (FSR, Temp, Light).
 
 2. **Software & Libraries**  
@@ -73,14 +76,18 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed 
    - Ensure you have the **Adafruit NeoPixel** library and any relevant libraries from **Edge Impulse** installed.
 
 3. **Flashing `CSBv1.ino`**  
+   - Download both `CSBv1.ino` and `ei-empanada-arduino-1.0.X.zip` 
    - Open `CSBv1.ino` in the Arduino IDE.  
-   - Select your board and COM port.  
-   - Upload the sketch.
+   - Select your board and COM port.
+   - Go to Sketch -> Include Library -> Add .ZIP library
+   - Add ei-empanada-arduino-1.0.X.zip
+   - Compile and upload the sketch.
 
 4. **Running & Observing**  
-   - **Mode 1 (Morris–Lecar)**: If no add-on board is detected (attachment sense pin < threshold), you’ll see the spiking behavior controlled by three knobs.  
-   - **Mode 2 (Izhikevich + TinyML)**: If the SKIN add-on board is attached (attachment sense pin >= threshold), the sketch runs a classification on sensor data to decide whether to “fire” the neuron model.  
-   - Monitor the **Serial** output to see debug info or classification confidence.
+   - **Mode 1 (Hodgkin–Huxley)**: If no add-on board is detected (attachment sense pin < threshold), you’ll see the spiking behavior controlled by three knobs.  
+   - **Mode 2 (Izhikevich + TinyML)**: If the SKIN add-on board is attached (attachment sense pin >= threshold), the sketch runs a classification on sensor data to decide whether to “fire” the neuron model.
+   - Open Spike Recorder to see the model play out in real time
+   -(Optional debug mode ) Monitor the **Serial** output to see debug info or classification confidence.
 
 5. **Lesson Integration**  
    - Check the [High School Lesson Plan](https://docs.google.com/document/d/10m3qYU1o_Ff_S5vf5cXgXZOqF4JOqBALDKtLj9YVtUo/edit?tab=t.0#heading=h.nyvcnz9wxjju) for ideas on how to structure classroom labs around these models and sensors.  
