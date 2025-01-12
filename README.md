@@ -5,7 +5,7 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed 
 ## Overview
 
 - **What It Does**  
-  1. **Hodgkin-Huxley Model**: A spiking neuron model where students can twist knobs (ion channel conductances) to see how poisons and venums can affect the nervous system.  
+  1. **Hodgkin-Huxley-Serbe Model**: A spiking neuron model where students can twist knobs (ion channel conductances) to see how poisons and venums can affect the nervous system.  
   2. **Izhikevich + TinyML Model**: An “EPhys Neuron Identification Game” that integrates **machine learning** to classify sensor data and drive a simplified neuron model in real time.
 
 - **Who It’s For**  
@@ -13,7 +13,7 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed 
   - **Each student** can have their own CSBox (if resources allow) to dive deeper into computational models, sensor readings, and even machine learning.
 
 - **Educational Goals**  
-  - Demonstrate how theoretical neuron equations (Hodgkin-Huxley, Izhikevich) can be **interactively** explored.  
+  - Demonstrate how theoretical neuron equations (Hodgkin-Huxley-Serbe, Izhikevich) can be **interactively** explored.  
   - Provide a **hands-on** introduction to **machine learning** classification, bridging neuroscience, electronics, and STEM.
 
 ---
@@ -21,7 +21,7 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed 
 ## Repository Contents
 
 - **`CSBv1.1.ino`**  
-  *This is the latest, feature-complete release.* It implements the two main modes (Hodgkin-Huxley for biophysical spiking, and Izhikevich + TinyML for the “Neuron Identification Game”) as described above.
+  *This is the latest, feature-complete release.* It implements the two main modes (Hodgkin-Huxley-Serbe for biophysical spiking, and Izhikevich + TinyML for the “Neuron Identification Game”) as described above.
   
 - **`ei-empanada-arduino-1.0.X.zip`**  
   *This is the latest Machine Learning header.* Needed for Izhikevich model and Neuron guessing game
@@ -68,7 +68,7 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform designed 
 ## Usage & Getting Started
 
 1. **Hardware Setup**  
-   - Connect your CSBox main board with potentiometers (for Hodgkin-Huxley) and any add-on boards (like “SKIN”) for the ML-based neuron ID game.
+   - Connect your CSBox main board with potentiometers (for Hodgkin-Huxley-Serbe) and any add-on boards (like “SKIN”) for the ML-based neuron ID game.
    - Make sure you have a compatible microcontroller (e.g., Arduino-type board) and all required sensors (FSR, Temp, Light).
 
 2. **Software & Libraries**  
