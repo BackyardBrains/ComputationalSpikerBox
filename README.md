@@ -81,7 +81,7 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform that intr
    - Compile and upload the sketch.
 
 4. **Running & Observing**  
-   - **Mode 1 (Hodgkin–Huxley)**: If no add-on board is detected (attachment sense pin < threshold), you’ll see the spiking behavior controlled by three knobs.  
+   - **Mode 1 (Hodgkin–Huxley-Serbe)**: If no add-on board is detected (attachment sense pin < threshold), you’ll see the spiking behavior controlled by three knobs.  
    - **Mode 2 (Izhikevich + TinyML)**: If the SKIN add-on board is attached (attachment sense pin >= threshold), the sketch runs a classification on sensor data to decide whether to “fire” the neuron model.
    - Open Spike Recorder to see the model play out in real time
    -(Optional debug mode ) Monitor the **Serial** output to see debug info or classification confidence.
@@ -94,7 +94,7 @@ The **Computational SpikerBox** (CSB) is a hardware-based lab platform that intr
 
 ## Future Directions
 
-- **Additional Models**: You can import new or extended neuron models (e.g., Hodgkin–Huxley, heart pacemaker cells).  
+- **Additional Models**: You can import new or extended neuron models (e.g., Hodgkin–Huxley-Serbe, heart pacemaker cells).  
 - **Deeper ML**: Train your own classifiers with new sensor data (using [Edge Impulse](https://studio.edgeimpulse.com/)).  
 - **Advanced Lab Activities**: Introduce noise, bursting phenomena, or combined synaptic inputs for more complex lessons.
 
