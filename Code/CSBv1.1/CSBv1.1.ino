@@ -118,13 +118,13 @@ int stop = 0;
 int lightVal = 0;
 int tempVal = 0;
 int pullupVal = 0;
- //Key: 0 = Fast, 1 = Hold, 2 = Null, 3 = Slow, 4 = Light, 5 = Temp, 6= Everything fires
-      //    Meissner  Ruffini   Skipped    Merkle   ???        Free Nerve   ET Req
-      //    Cyan      Orange    Off       Magenta   Yellow    Red
+ //Key: 0 = Fast, 1 = Hold, 2 = Null,   3 = Slow,   4 = Light,  5 = Temp, 6= Everything fires
+      //    Meissner  Ruffini   Skipped    Merkle   ???         Free Nerve   ET Req
+      //    Blue      Green    Off       Magenta    Yellow      Red
 int NeuronArray[] = {0, 1, 2, 3, 4, 5};
-int NeuronR[] = {0, 255, 0, 255,  255, 180};
-int NeuronG[] = {255, 140, 0, 0, 255, 20};
-int NeuronB[] = {255, 0,  0, 255, 0, 43};
+int NeuronR[] = {0,   0,    0,  255,  255,  255};
+int NeuronG[] = {0,   255,  0,  0,    255,  0};
+int NeuronB[] = {255, 0,    0,  255,  0,    0};
 int swap = 0;
 int joystickMove = 0;
 
@@ -561,12 +561,12 @@ void updateIzhikevich(){
   }
   print_inference_result(result);
   //Key: 0 = Fast, 1 = Hold, 2 = Null, 3 = Slow, 4 = Light, 5 = Temp
-    if(tempVal < 1400){ //Ambient room temp is 1700, cold spoon drops to 1200
+    if((tempVal < 1700)||(tempVal > 2600)){ //Ambient room temp is 1700, cold spoon drops to 1200
     //Removed upper limit due to indoor heating in the winter, couldn't get reliable value
       Neuronum = 5;
       category = "Temp";
     }
-    if(lightVal > 1200){ //Ambient light is excluded by covering, flash light on should max at 4095
+    if(lightVal > 2100){ //Ambient light is excluded by covering, flash light on should max at 4095
       Neuronum = 4; //Light wins all
       category = "Light";
     }
